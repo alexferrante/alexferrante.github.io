@@ -3,7 +3,7 @@ import style from './style';
 const s = Object.create(style);
 
 s.root = {
-  fontFamily: 'helvetica, sans-serif',
+  fontFamily: 'IBM Plex Sans, sans-serif',
   fontWeight: '300',
   fontSize: '16px',
   letterSpacing: '0.025em',
@@ -24,7 +24,9 @@ s.root = {
 };
 
 s.title = {
-  fontSize: '20px',
+  fontFamily: 'Heebo, helvetica, sans-serif',
+  fontWeight: '400',
+  fontSize: '50px',
   marginBottom: '0.5vh',
 };
 
