@@ -1,7 +1,30 @@
-import React, { Component } from 'react';
-import '../styles/menu.scss';
+import React from 'react';
 import { device } from '../styles/util/const';
+import s from '../styles/app.style'
 
-export default class Menu extends Component {
+class Menu extends React.Component {
+
+  constructor(props) {
+    super(props);
+    this.state = {
+    
+    };
+  }
+
+  handleEntry = () => {
   
+  }
+
+  handleExit = () => {
+
+  }
+
+  render() {
+    return (
+      <div style={s.menu} onMouseEnter={this.handleEntry} onMouseLeave={this.handleExit}>
+      </div>
+    );
+  }
 }
+
+export default Menu

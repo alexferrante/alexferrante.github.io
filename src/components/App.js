@@ -2,6 +2,7 @@ import React from 'react'
 import { Waypoint } from 'react-waypoint'
 import s from '../styles/app.style'
 import Splash from './Splash'
+import Menu from './Menu'
 
 class App extends React.Component {
 
@@ -19,7 +20,7 @@ class App extends React.Component {
   componentDidMount() {
     setTimeout(() => {
       this.setTimePassed();
-    }, 2000);
+    }, 200);
   }
 
   setTimePassed() {
@@ -30,11 +31,14 @@ class App extends React.Component {
     return (
       <Waypoint scrollableAncestor={window} onEnter={this.handleEntry}>
         {!this.state.timePassed ? <Splash></Splash> :
-        <div style={s.root}>
-          <div style={s.title}>aaaaaa</div>
-          <div>To embed your selected fonts into a webpage, copy this code into the of your HTML document.</div>
+        <div>
+          <Menu></Menu>
+          <div style={s.main}>
+            <div style={s.title}>aaaaaa</div>
+            <div>To embed your selected fonts into a webpage, copy this code into the of your HTML document.</div>
+          </div>
         </div>
-        }  
+        }
       </Waypoint>
     )
   }
