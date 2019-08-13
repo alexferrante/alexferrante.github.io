@@ -3,15 +3,10 @@ import style from './style';
 const s = Object.create(style);
 
 s.root = {
-  fontFamily: 'IBM Plex Sans, sans-serif',
-  fontWeight: '300',
-  fontSize: '16px',
-  letterSpacing: '0.025em',
-  padding: '3vh 0 12vh 0',
-  width: '500px',
   maxWidth: 'calc(100vw - 40px)',
+  height: '10000px',
+  left: '60vw',
   position: 'relative',
-  left: '50vw',
   WebkitTransform: 'translate(-50%, 0)',
   MozTransform: 'translate(-50%, 0)',
   msTransform: 'translate(-50%, 0)',
@@ -21,6 +16,15 @@ s.root = {
   MozTextSizeAdjust: 'none',
   msTextSizeAdjust: 'none',
   textSizeAdjust: 'none',
+}
+
+s.main = {
+  fontFamily: 'IBM Plex Sans, sans-serif',
+  fontWeight: '300',
+  fontSize: '16px',
+  letterSpacing: '0.025em',
+  width: '80%',
+  alignItems: 'flex-end'
 };
 
 s.title = {
@@ -30,18 +34,18 @@ s.title = {
   marginBottom: '0.5vh',
 };
 
-s.repoLink = {
-  fontSize: '14px',
-};
-
 s.breadcrumbs = {
   margin: '3vh 0',
 };
 
-s.creditLine = {
-  color: '#A0A0A0',
-  fontSize: '14px',
-  marginTop: '50px',
-};
+s.menu = {
+  position: 'absolute',
+  right: '400',
+  height: '80vw',
+  backgroundColor: '#000',
+  width: '10%',
+  padding: '10vw 0vw 10vw 0vw',
+  alignSelf: 'text-start',
+}
 
 export default s;
