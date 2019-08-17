@@ -9,19 +9,22 @@
 	"author": "Alexandra Ferrante",
 	"license": "MIT",
 	"dependencies": {
+		"@babel/parser": "^7.5.5",
+		"@babel/plugin-proposal-class-properties": "^7.5.5",
+		"@babel/preset-react": "^7.0.0",
 		"prop-types": "^15.6.0",
 		"react": "^16.0.0",
-		"react-addons-css-transition-group": "^15.6.2",
-		"react-addons-transition-group": "^15.6.2",
 		"react-dom": "^16.0.0",
 		"react-interactive": "^0.8.1",
 		"react-router-dom": "^4.2.2",
 		"react-waypoint": "^9.0.2"
 	},
 	"devDependencies": {
-		"babel-core": "^6.26.0",
+		"@babel/core": "^7.5.5",
+		"@babel/preset-env": "^7.5.5",
+		"babel-core": "^7.0.0-bridge.0",
 		"babel-eslint": "^7.2.3",
-		"babel-loader": "^7.1.2",
+		"babel-loader": "^8.0.4",
 		"babel-preset-env": "^1.6.0",
 		"babel-preset-react": "^6.24.1",
 		"babel-preset-stage-1": "^6.24.1",
@@ -34,7 +37,7 @@
 		"node-sass": "^4.12.0",
 		"sass-loader": "^7.2.0",
 		"style-loader": "^1.0.0",
-		"webpack": "^4.38.0",
+		"webpack": "^4.39.2",
 		"webpack-cli": "^3.3.6",
 		"webpack-dev-server": "3.7.1"
 	}
