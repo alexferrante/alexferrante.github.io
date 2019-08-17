@@ -28,14 +28,11 @@ s.fullMenu = {
 
 s.toggler = {
   content: '',
-  height: '50px',
-  width: '50px',
   position: 'absolute',
   top: '',
   left: '',
   cursor: 'pointer',
   zIndex: '9'
-
 }
 
 

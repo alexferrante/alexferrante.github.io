@@ -7,16 +7,16 @@ class MenuContent extends React.Component {
     super(props);
     this.state = {
       navs: [{
-        text: '',
-        link: '',
+        text: 'hhhh',
+        link: 'e',
         icon: ''
       }, {
-        text: '',
-        link: '',
+        text: 'hhh',
+        link: 't',
         icon: ''
       }, {
-        text: '',
-        link: '',
+        text: 'ttt',
+        link: 'hhh',
         icon: ''
       }]
     }
@@ -28,7 +28,7 @@ class MenuContent extends React.Component {
       "_blank">{link.text}</a></li>);
 
     return (
-      <div className={this.props.menuStatus} id="linksContainer">
+      <div className={this.props.toggleStatus} id="linksContainer">
         <ul>
           { navLinks }
         </ul>

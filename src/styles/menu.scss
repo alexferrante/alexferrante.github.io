@@ -1,7 +1,5 @@
 .menuContainer{
   display: block;
-  height: 60px;
-  background-color: #467;
   box-shadow: 2px 5px 5px 0 rgba(0,0,0,.12);
   text-align: center;
 }
@@ -9,7 +7,6 @@
 .menuContainer span{
   display: inline-block;
   position: absolute;
-  left: 50%;
   transform: translateX(-50%);
   font-weight: 300;
   font-size: 2em;
@@ -18,50 +15,35 @@
 
 #slideMenu{
   position: relative;
-  width: 40px;
-  height: 45px;
-  float: left;
+  width: 20%;
+  height: 100%;
+  margin-top: 180px;
+  float: right;
   transition: .5s ease-in-out;
   cursor: pointer;
   & span {
     position: absolute;
-    height: 5px;
-    width: 100%;
-    vertical-align: middle;
-    margin: 20px 0 0 15px;
-    background: white;
+    height: 300px;
+    width: 50%;
     border-radius: 8px;
+    margin: 10px 0 0 0;
     opacity: 1;
-    left: 0;
-    transform: rotate(0deg);
+    left: 1;
     transition: .25s ease-in-out;
     padding: 0px;
   }
 }
 
+#slideMenu:hover span {
+  background: white;
+}
+
 #slideMenu  span:nth-child(1) {
-  top: 0px;
 }
 #slideMenu  span:nth-child(2),#slideMenu  span:nth-child(3){
-  top: 10px;
 }
-#slideMenu span:nth-child(4){
-  top: 20px;
-}
+
 #slideMenu.isopen span:nth-child(1){
-  top: 18px;
-  width: 0%;
-  left: 50%;
-  opacity: 0;
-}
-#slideMenu.isopen span:nth-child(2){
-  transform: rotate(45deg);
-}
-#slideMenu.isopen span:nth-child(3){
-  transform: rotate(-45deg);
-}
-#slideMenu.isopen span:nth-child(4){
-  top: 18px;
   width: 0%;
   left: 50%;
   opacity: 0;
@@ -69,8 +51,6 @@
 
 #linksContainer{
   position: absolute;
-  height: calc(100vh - 60px);
-  width: 210px;
   background-color: white;
   transform: translateX(-100%);
   transition: transform 300ms;

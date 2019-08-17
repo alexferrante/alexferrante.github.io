@@ -25,7 +25,7 @@ class Menu extends React.Component {
   }
 
   _toggleMenu = (e) => {
-    e.stopPropogation();
+    e.stopPropagation();
     this.setState({
       isToggled: !this.state.isToggled
     });
@@ -47,10 +47,9 @@ class Menu extends React.Component {
     let toggleStatus = this.state.isToggled ? 'open' : '';
 
     return (
-      <div ref="root">
+      <div ref="root" style={s.menu}>
         <div className="menuContainer">
-          <div style={s.toggler} onClick= { this._toggleMenu}></div>
-          <div id="slideMenu"></div>
+          <div id="slideMenu" className={toggleStatus}><span style={s.toggler}onClick={this._toggleMenu}></span></div>
         </div>
         <MenuContent></MenuContent>
 
