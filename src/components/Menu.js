@@ -10,7 +10,7 @@ class Menu extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      isToggled: false
+      isToggled: true
     };
     this._toggleMenu = this._toggleMenu.bind(this);
     this._handleEntry = this._handleEntry.bind(this);
@@ -44,15 +44,12 @@ class Menu extends React.Component {
   }
 
   render() {
-    let toggleStatus = this.state.isToggled ? 'open' : '';
 
     return (
-      <div ref="root" style={s.menu}>
-        <div className="menuContainer">
-          <div id="slideMenu" className={toggleStatus}><span style={s.toggler}onClick={this._toggleMenu}></span></div>
-        </div>
+      <div ref="root" id="wrapper" style={this.state.isToggled ? s.fullMenu : s.menu}>
+        <div className="menuContainer" onClick={this._toggleMenu}>
         <MenuContent></MenuContent>
-
+        </div>
       </div>
     );
   }

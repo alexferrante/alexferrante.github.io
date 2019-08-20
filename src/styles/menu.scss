@@ -1,10 +1,27 @@
-.menuContainer{
+#wrapper {
+  width: 7%;
+  min-width: 7vw;
+  -webkit-transition: width 1s ease-in-out;
+  -moz-transition: width 1s ease-in-out;
+  -o-transition: width 1s ease-in-out;
+  transition: width 1s ease-in-out;
+}
+
+#wrapper:hover {
+  -webkit-transition: width 1s ease-in-out;
+  -moz-transition: width 1s ease-in-out;
+  -o-transition: width 1s ease-in-out;
+  transition: width 1s ease-in-out;
+  width: 70%;
+}
+
+.menuContainer {
   display: block;
   box-shadow: 2px 5px 5px 0 rgba(0,0,0,.12);
   text-align: center;
 }
   
-.menuContainer span{
+.menuContainer span {
   display: inline-block;
   position: absolute;
   transform: translateX(-50%);
@@ -13,7 +30,7 @@
   line-height: 60px;
 }
 
-#slideMenu{
+.slideMenu {
   position: relative;
   width: 20%;
   height: 100%;
@@ -34,19 +51,8 @@
   }
 }
 
-#slideMenu:hover span {
-  background: white;
-}
-
-#slideMenu  span:nth-child(1) {
-}
-#slideMenu  span:nth-child(2),#slideMenu  span:nth-child(3){
-}
-
-#slideMenu.isopen span:nth-child(1){
-  width: 0%;
-  left: 50%;
-  opacity: 0;
+#open {
+  width: 1000px;
 }
 
 #linksContainer{

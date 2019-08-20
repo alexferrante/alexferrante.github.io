@@ -8,10 +8,10 @@ s.menu = {
   height: '60%',
   maxHeight: '60vw',
   backgroundColor: '#000',
-  width: '10%',
-  minWidth: '12vw',
   margin: '18vw 0vw 12vw 0vw',
-  float: 'left'
+  float: 'left',
+  borderTopRightRadius: '10px',
+  borderBottomRightRadius: '10px'
 };
 
 s.fullMenu = {
@@ -19,11 +19,11 @@ s.fullMenu = {
   right: '400',
   height: '60%',
   maxHeight: '60vw',
-  backgroundColor: '#fff',
-  width: '50%',
-  minWidth: '12vw',
+  backgroundColor: '#000',
   margin: '18vw 0vw 12vw 0vw',
-  float: 'left'
+  float: 'left',
+  borderTopRightRadius: '10px',
+  borderBottomRightRadius: '10px'
 };
 
 s.toggler = {
