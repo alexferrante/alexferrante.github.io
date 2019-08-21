@@ -1,5 +1,5 @@
 import React from 'react'
-import s from '../styles/menu.style'
+import s from '../styles/app.style'
 import '../styles/menu.scss'
 
 class MenuContent extends React.Component {
@@ -24,8 +24,7 @@ class MenuContent extends React.Component {
 
   render() {
     let navLinks = this.state.navs.map((link, i) => <li ref={i + 1}>
-      <i aria-hidden="true"></i><a href={link.link} target=
-      "_blank">{link.text}</a></li>);
+     <a href={link.link}>{link.text}</a></li>);
 
     return (
       <div className={this.props.toggleStatus} id="linksContainer">

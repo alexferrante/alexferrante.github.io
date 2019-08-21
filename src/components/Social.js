@@ -1,11 +1,8 @@
 import React from 'react'
-import { device } from '../styles/util/const'
 import s from '../styles/app.style'
 import '../styles/menu.scss'
-import MenuContent from './MenuContent'
 
-
-class Menu extends React.Component {
+class Social extends React.Component {
 
   constructor(props) {
     super(props);
@@ -46,13 +43,11 @@ class Menu extends React.Component {
   render() {
 
     return (
-      <div ref="root" id="menuWrapper" style={this.state.isToggled ? s.fullMenu : s.menu}>
-        <div className="menuContainer" onClick={this._toggleMenu}>
-        <MenuContent></MenuContent>
-        </div>
+      <div ref="root" id="socialWrapper" style={this.state.isToggled ? s.social : s.social}>
+      <div style={s.test}></div>
       </div>
     );
   }
 }
 
-export default Menu
+export default Social

@@ -30,6 +30,41 @@ s.main = {
   position: 'relative'
 };
 
+s.menu = {
+  position: 'fixed',
+  right: '400',
+  height: '60%',
+  maxHeight: '60vw',
+  backgroundColor: '#000',
+  margin: '18vw 0vw 12vw 0vw',
+  float: 'left',
+  borderTopRightRadius: '10px',
+  borderBottomRightRadius: '10px'
+};
+
+s.fullMenu = {
+  position: 'fixed',
+  right: '400',
+  height: '60%',
+  maxHeight: '60vw',
+  backgroundColor: '#000',
+  margin: '18vw 0vw 12vw 0vw',
+  float: 'left',
+  borderTopRightRadius: '10px',
+  borderBottomRightRadius: '10px'
+};
+
+s.social = {
+  position: 'fixed',
+  height: '5%',
+  right: '0',
+  maxHeight: '5vw',
+  backgroundColor: '#000',
+  borderTopLeftRadius: '3px',
+  borderBottomLeftRadius: '3px',
+  margin: '10vw 0vw 12vw 0vw',
+};
+
 s.title = {
   fontFamily: 'Heebo, helvetica, sans-serif',
   fontWeight: '400',
