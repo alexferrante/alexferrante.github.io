@@ -18,6 +18,7 @@
 #socialWrapper {
   width: 5%;
   min-width: 5vw;
+  right: 0;
   -webkit-transition: width 1s ease-in-out;
   -moz-transition: width 1s ease-in-out;
   -o-transition: width 1s ease-in-out;
@@ -34,18 +35,16 @@
 }
 
 .socialContainer {
+  position: fixed;
   display: block;
-  box-shadow: 2px 5px 5px 0 rgba(0,0,0,.12);
-  text-align: center;
+  box-shadow: 2px 5px 5px 0 rgba(0,0,0,.12); 
 }
 
 .menuContainer {
   display: block;
   box-shadow: 2px 5px 5px 0 rgba(0,0,0,.12);
-  text-align: center;
 }
   
-
 .slideMenu {
   position: relative;
   width: 20%;

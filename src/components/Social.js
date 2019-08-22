@@ -47,7 +47,10 @@ class Social extends React.Component {
 
     return (
       <div ref="root" id="socialWrapper" style={this.state.isToggled ? s.social : s.social}>
-        <div className="socialContainer"></div>
+        <div className="socialContainer">
+          <gitIcon></gitIcon>
+          <linkedIcon></linkedIcon>
+        </div>
       </div>
     );
   }
