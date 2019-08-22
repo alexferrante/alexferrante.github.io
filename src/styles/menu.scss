@@ -16,8 +16,8 @@
 }
 
 #socialWrapper {
-  width: 5%;
-  min-width: 5vw;
+  width: 3%;
+  min-width: 3vw;
   right: 0;
   -webkit-transition: width 1s ease-in-out;
   -moz-transition: width 1s ease-in-out;
@@ -31,13 +31,12 @@
   -moz-transition: width 1s ease-in-out;
   -o-transition: width 1s ease-in-out;
   transition: width 1s ease-in-out;
-  width: 30%;
+  width: 12%;
 }
 
 .socialContainer {
   position: fixed;
   display: block;
-  box-shadow: 2px 5px 5px 0 rgba(0,0,0,.12); 
 }
 
 .menuContainer {
