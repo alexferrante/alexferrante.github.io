@@ -55,11 +55,10 @@ s.fullMenu = {
 };
 
 s.social = {
-  position: 'fixed',
+  position: 'absolute',
   height: '5%',
-  right: '0',
   maxHeight: '5vw',
-  backgroundColor: '#000',
+  backgroundColor: '#fff',
   borderTopLeftRadius: '3px',
   borderBottomLeftRadius: '3px',
   margin: '10vw 0vw 12vw 0vw',

@@ -1,6 +1,9 @@
 import React from 'react'
 import s from '../styles/app.style'
 import '../styles/menu.scss'
+import gitIcon from '../styles/assets/github.svg'
+import linkedIcon from '../styles/assets/linkedin.svg'
+
 
 class Social extends React.Component {
 
@@ -44,7 +47,7 @@ class Social extends React.Component {
 
     return (
       <div ref="root" id="socialWrapper" style={this.state.isToggled ? s.social : s.social}>
-      <div style={s.test}></div>
+        <div className="socialContainer"></div>
       </div>
     );
   }

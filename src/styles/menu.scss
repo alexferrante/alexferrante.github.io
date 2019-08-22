@@ -24,13 +24,19 @@
   transition: width 1s ease-in-out;
 }
 
+
 #socialWrapper:hover { 
   -webkit-transition: width 1s ease-in-out;
   -moz-transition: width 1s ease-in-out;
   -o-transition: width 1s ease-in-out;
   transition: width 1s ease-in-out;
   width: 30%;
-  background-color: #fff,
+}
+
+.socialContainer {
+  display: block;
+  box-shadow: 2px 5px 5px 0 rgba(0,0,0,.12);
+  text-align: center;
 }
 
 .menuContainer {
@@ -39,14 +45,6 @@
   text-align: center;
 }
   
-.menuContainer span {
-  display: inline-block;
-  position: absolute;
-  transform: translateX(-50%);
-  font-weight: 300;
-  font-size: 2em;
-  line-height: 60px;
-}
 
 .slideMenu {
   position: relative;
