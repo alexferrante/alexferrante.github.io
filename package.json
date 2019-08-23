@@ -3,7 +3,7 @@
 	"version": "1.0.0",
 	"description": "Personal website",
 	"scripts": {
-		"start": "webpack-dev-server --devtool eval-source-map --history-api-fallback --open",
+		"start": "webpack-dev-server --port 9000 --devtool eval-source-map --history-api-fallback --open",
 		"build": "webpack -p"
 	},
 	"author": "Alexandra Ferrante",
@@ -18,7 +18,8 @@
 		"react-dom": "^16.0.0",
 		"react-interactive": "^0.8.1",
 		"react-router-dom": "^4.2.2",
-		"react-waypoint": "^9.0.2"
+		"react-waypoint": "^9.0.2",
+		"regenerator-runtime": "^0.13.3"
 	},
 	"devDependencies": {
 		"@babel/core": "^7.5.5",

@@ -1,7 +1,11 @@
 import axios from 'axios';
-import { getHash } from './util';
+import regeneratorRuntime from 'regenerator-runtime';
+import { getHash, generateRandomString } from './util';
 
 const MAX_TIME = 3600 * 1000;
+
+export const CLIENT_SECRET = process.env.CLIENT_SECRET;
+export const CLIENT_ID = process.env.CLIENT_ID;
 
 const setTokenTimestamp = () => window.localStorage.setItem('spotify_token_timestamp', Date.now());
 const setLocalAccessToken = token => {

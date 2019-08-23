@@ -7,4 +7,4 @@ export const getHash = () => {
       hashParams[e[1]] = decodeURIComponent(e[2]);
     }
     return hashParams;
-  };
+};
