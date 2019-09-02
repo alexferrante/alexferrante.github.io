@@ -1,36 +1,41 @@
 import React from 'react'
 import s from '../styles/app.style'
 import '../styles/menu.scss'
+import { NavLink, Route } from 'react-router-dom'
+import Projects from './Projects'
+import Experience from './Experience'
 
 class MenuContent extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       navs: [{
-        text: 'hhhh',
-        link: 'e',
+        text: 'Projects',
+        link: '',
+        component: {Projects},
         icon: ''
       }, {
-        text: 'hhh',
-        link: 't',
-        icon: ''
-      }, {
-        text: 'ttt',
-        link: 'hhh',
+        text: 'Experience',
+        link: '',
+        component: {Experience},
         icon: ''
       }]
     }
   }
 
   render() {
-    let navLinks = this.state.navs.map((link, i) => <li ref={i + 1}>
-     <a href={link.link}>{link.text}</a></li>);
-
     return (
       <div className={this.props.toggleStatus} id="linksContainer">
-        <ul>
-          { navLinks }
-        </ul>
+        <li>
+        <NavLink exact to="/Projects">Projects</NavLink>
+        </li>
+        <li>
+        <NavLink exact to="/Experience">Experience</NavLink>
+        </li>
+        <div id="content">
+        <Route exact path to='/Projects' component={Projects}/>
+        <Route exact path to='/Experience' component={Experience}/>
+        </div>
       </div>
     )
   }   

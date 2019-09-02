@@ -2,7 +2,9 @@
 import React from 'react'
 import axios from 'axios'
 import { getRecentTopTracks, getReccsForTracks, CLIENT_ID, CLIENT_SECRET, REDIRECT_URI } from '../actions/spotify'
+import { genRandomString } from '../actions/util'
 import s from '../styles/app.style'
+import { withRouter } from 'react-router-dom'
 
 class Music extends React.Component {
 	
@@ -30,20 +32,11 @@ class Music extends React.Component {
 	}
 	
 	login() {
-		let hashParams = {};
-	  let e, r = /([^&;=]+)=?([^&;]*)/g,
-	    q = window.location.hash.substring(1);
-	  while ( e = r.exec(q)) {
-	    hashParams[e[1]] = decodeURIComponent(e[2]);
-	  }
-	  if(!hashParams.access_token) {
-	    window.location.href = `https://accounts.spotify.com/authorize?&client_id=${CLIENT_ID}&scope=playlist-read-private%20playlist-read-collaborative%20playlist-modify-public%20user-read-recently-played%20playlist-modify-private%20ugc-image-upload%20user-follow-modify%20user-follow-read%20user-library-read%20user-library-modify%20user-read-private%20user-read-email%20user-top-read%20user-read-playback-state&response_type=authorization_code&redirect_uri=http://localhost:9000/`;
-	  } else {
-	    this.props.setToken(hashParams.access_token);
-	  }
+		let scope = 'user-read-private user-top-read';
+		this.props.history.push(`https://accounts.spotify.com/authorize?response_type=token&client_id=${encodeURIComponent(CLIENT_ID)}
+							&scope=${encodeURIComponent(scope)}&redirect_uri=${encodeURIComponent(REDIRECT_URI)}&state=${encodeURIComponent(genRandomString(16))}`);
 	}
 	
-
 	render() {
 		return (
 			<div>
@@ -62,5 +55,5 @@ class Music extends React.Component {
 	}
 }
 
-export default Music
+export default withRouter(Music);
 

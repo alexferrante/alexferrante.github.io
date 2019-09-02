@@ -3,6 +3,10 @@ import { Waypoint } from 'react-waypoint'
 import s from '../styles/app.style'
 import Splash from './Splash'
 import Menu from './Menu'
+import Social from './Social'
+import Music from './Music'
+import MenuContent from './MenuContent'
+
 
 class App extends React.Component {
 
@@ -32,11 +36,8 @@ class App extends React.Component {
       <Waypoint scrollableAncestor={window} onEnter={this.handleEntry}>
         {!this.state.timePassed ? <Splash></Splash> :
         <div>
-          <Menu></Menu>
-          <div style={s.main}>
-            <div style={s.title}>aaaaaa</div>
-            <div>To embed your selected fonts into a webpage, copy this code into the of your HTML document.</div>
-          </div>
+          <Social></Social>
+          <MenuContent></MenuContent>
         </div>
         }
       </Waypoint>
