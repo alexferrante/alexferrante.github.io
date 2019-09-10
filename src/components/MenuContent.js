@@ -1,9 +1,9 @@
 import React from 'react'
 import s from '../styles/app.style'
 import '../styles/menu.scss'
-import { NavLink, Route } from 'react-router-dom'
 import Projects from './Projects'
 import Experience from './Experience'
+import { HashLink as Link } from 'react-router-hash-link'
 
 class MenuContent extends React.Component {
   constructor(props) {
@@ -12,12 +12,10 @@ class MenuContent extends React.Component {
       navs: [{
         text: 'Projects',
         link: '',
-        component: {Projects},
         icon: ''
       }, {
         text: 'Experience',
         link: '',
-        component: {Experience},
         icon: ''
       }]
     }
@@ -27,15 +25,11 @@ class MenuContent extends React.Component {
     return (
       <div className={this.props.toggleStatus} id="linksContainer">
         <li>
-        <NavLink exact to="/Projects">Projects</NavLink>
+        <Link to="#projects">Projects</Link>
         </li>
         <li>
-        <NavLink exact to="/Experience">Experience</NavLink>
+        <Link to="#experience">Experience</Link>
         </li>
-        <div id="content">
-        <Route exact path to='/Projects' component={Projects}/>
-        <Route exact path to='/Experience' component={Experience}/>
-        </div>
       </div>
     )
   }   

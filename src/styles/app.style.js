@@ -36,6 +36,7 @@ s.menu = {
   height: '60%',
   maxHeight: '60vw',
   margin: '18vw 0vw 12vw 0vw',
+  backgroundColor: '#000',
   float: 'left',
   borderTopRightRadius: '10px',
   borderBottomRightRadius: '10px'
@@ -46,7 +47,7 @@ s.fullMenu = {
   right: '400',
   height: '60%',
   maxHeight: '60vw',
-  backgroundColor: '#fff',
+  backgroundColor: '#000',
   margin: '18vw 0vw 12vw 0vw',
   float: 'left',
   borderTopRightRadius: '10px',

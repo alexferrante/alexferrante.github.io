@@ -4,7 +4,9 @@ import s from '../styles/app.style'
 class Experience extends React.Component {
   render() {
   return (
-    <h1>expe</h1>
+    <div id="experience">
+      <h1>hi</h1>
+    </div>
   );
   }
 }

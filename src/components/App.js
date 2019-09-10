@@ -1,11 +1,12 @@
 import React from 'react'
-import { Waypoint } from 'react-waypoint'
 import s from '../styles/app.style'
 import Splash from './Splash'
 import Menu from './Menu'
 import Social from './Social'
 import Music from './Music'
 import MenuContent from './MenuContent'
+import Experience from './Experience'
+import Projects from './Projects'
 
 
 class App extends React.Component {
@@ -15,10 +16,6 @@ class App extends React.Component {
     this.state = {
       timePassed: false,
     };
-  }
-
-  handleEntry = () => {
-    console.log('entered')
   }
 
   componentDidMount() {
@@ -33,14 +30,16 @@ class App extends React.Component {
 
   render() {
     return (
-      <Waypoint scrollableAncestor={window} onEnter={this.handleEntry}>
+      <div>
         {!this.state.timePassed ? <Splash></Splash> :
         <div>
           <Social></Social>
-          <MenuContent></MenuContent>
+          <Menu></Menu>
+          <Experience></Experience>
+          <Projects></Projects>
         </div>
         }
-      </Waypoint>
+      </div>
     )
   }
 }
