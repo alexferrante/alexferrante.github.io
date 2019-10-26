@@ -1,0 +1,10 @@
+// Jest Snapshot v1
+
+exports[`UI/Button 1`] = `
+<button
+  className="button button--blue"
+  onClick={[Function]}
+>
+  Hello
+</button>
+`;

@@ -1,80 +1,137 @@
+const path = require('path');
+const getRepositoryName = require('git-repo-name').sync;
 const webpack = require('webpack');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const isDevelopment = process.env.NODE_ENV === 'development'
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
+const CleanWebpackPlugin = require('clean-webpack-plugin');
+const LodashModuleReplacementPlugin = require('lodash-webpack-plugin');
+const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
+
+const SETTINGS = require('./settings');
+
+const production = process.env.NODE_ENV === 'production';
+const pagesBuild = process.env.BUILD === 'pages';
+const analizer = process.env.ANALYZE === '1';
+
+const stylesLoaders = [
+  {
+    loader: 'css-loader',
+    options: {
+      minimize: production,
+      modules: true,
+      localIdentName: production ? '[hash:base64:7]' : '[path]__[local]--[hash:base64:5]',
+    },
+  },
+  'postcss-loader',
+  {
+    loader: 'sass-loader',
+    options: {
+      data: '@import "styles/globals";',
+      includePaths: [path.join(__dirname, 'src')],
+    },
+  },
+];
+
+const rules = [
+  {
+    test: /\.(js|jsx)$/,
+    loader: 'babel-loader',
+    include: path.join(__dirname, 'src'),
+    exclude: /node_modules/,
+  },
+
+  {
+    test: /\.(css|scss)$/,
+    include: path.join(__dirname, './src'),
+    loader: production
+      ? ExtractTextPlugin.extract({ fallback: 'style-loader', use: stylesLoaders })
+      : ['style-loader', ...stylesLoaders],
+  },
+
+  {
+    // do not load styles as css modules from other direcroies (e.g. node_modules) but src
+    test: /\.(css)$/,
+    loaders: production
+      ? ExtractTextPlugin.extract({
+        fallback: 'style-loader',
+        use: ['css-loader', 'postcss-loader'],
+      })
+      : ['style-loader', 'css-loader', 'postcss-loader'],
+    exclude: path.resolve(__dirname, '../src'),
+  },
+
+  {
+    test: /\.(svg|png|jpg|gif|woff|woff2|otf|ttf|eot)$/,
+    loader: 'file-loader',
+  },
+];
+
+const pluginsBase = [
+  new HtmlWebpackPlugin({ template: 'template.ejs' }),
+  new FaviconsWebpackPlugin(SETTINGS.FAVICONS),
+  new BundleAnalyzerPlugin({ analyzerMode: analizer ? 'server' : 'disabled' }),
+  new webpack.DefinePlugin({
+    'process.env': {
+      NODE_ENV: JSON.stringify(process.env.NODE_ENV || ''),
+    },
+  }),
+];
+
+const developmentPlugins = [
+  ...pluginsBase,
+  new webpack.HotModuleReplacementPlugin(),
+  new webpack.NamedModulesPlugin(),
+  new BrowserSyncPlugin(
+    {
+      host: 'localhost',
+      port: SETTINGS.PORT,
+      proxy: `http://localhost:${SETTINGS.PORT}`,
+      notify: false,
+    },
+    {
+      reload: false,
+    }
+  ),
+];
+
+const productionPlugins = [
+  new CleanWebpackPlugin([SETTINGS.PUBLIC_PATH]),
+  ...pluginsBase,
+  new LodashModuleReplacementPlugin(),
+  new ExtractTextPlugin('[name].css'),
+  new webpack.optimize.OccurrenceOrderPlugin(),
+];
 
 module.exports = {
-	entry: `${__dirname}/src/index.js`,
-	output: {
-		path: `${__dirname}/build`,
-		publicPath: '/build/',
-		filename: 'bundle.js'
-	},
-	module: {
-		rules: [
-			{ test: /\.js$/, exclude: /node_modules/, loader: 'babel-loader' },
-			{
-				test: /\.module\.s(a|c)ss$/,
-				loader: [
-					isDevelopment ? 'style-loader' : MiniCssExtractPlugin.loader,
-					{
-						loader: 'css-loader',
-						options: {
-							modules: true,
-							localIdentName: '[name]__[local]___[hash:base64:5]',
-							camelCase: true,
-							sourceMap: isDevelopment
-						}
-					},
-					{
-						loader: 'sass-loader',
-						options: {
-							sourceMap: isDevelopment
-						}
-					}
-				]
-			},
-			{
-				test: /\.s(a|c)ss$/,
-				exclude: /\.module.(s(a|c)ss)$/,
-				loader: [
-					isDevelopment ? 'style-loader' : MiniCssExtractPlugin.loader,
-					'css-loader',
-					{
-						loader: 'sass-loader',
-						options: {
-							sourceMap: isDevelopment
-						}
-					}
-				]
-			},
-			{
-				test: /\.svg$/,
-				use: [
-				  {
-					loader: "babel-loader"
-				  },
-				  {
-					loader: "react-svg-loader",
-					options: {
-					  jsx: true // true outputs JSX tags
-					}
-				  }
-				]
-			}
-		]
-	},
-	resolve: {
-		extensions: ['.js', '.jsx', '.scss']
-	},
-	plugins: process.argv.indexOf('-p') === -1 ? [] : [
-		new webpack.optimize.UglifyJsPlugin({
-			output: {
-				comments: false,
-			},
-		}),
-		new MiniCssExtractPlugin({
-			filename: isDevelopment ? '[name].css' : '[name].[hash].css',
-			chunkFilename: isDevelopment ? '[id].css' : '[id].[hash].css'
-		})
-	],
+  devtool: production ? false : 'eval',
+
+  mode: production ? 'production' : 'development',
+
+  optimization: {
+    minimize: production,
+  },
+
+  entry: production
+    ? path.join(__dirname, './src/index')
+    : [
+      `webpack-dev-server/client?http://localhost:${SETTINGS.PORT}`,
+      'webpack/hot/only-dev-server',
+      path.join(__dirname, './src/index'),
+    ],
+
+  output: {
+    path: SETTINGS.PUBLIC_PATH,
+    filename: 'bundle.js',
+    publicPath: pagesBuild ? `/${getRepositoryName()}/` : '/',
+  },
+
+  resolve: {
+    modules: [path.join(__dirname, 'src'), 'node_modules'],
+    extensions: ['.js', '.jsx'],
+  },
+
+  module: { rules },
+  plugins: production ? productionPlugins : developmentPlugins,
 };
