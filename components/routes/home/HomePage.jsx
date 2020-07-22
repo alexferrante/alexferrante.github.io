@@ -75,6 +75,23 @@ export default class HomePage extends React.Component {
           <h2>hhhhh</h2>
           <h2>hhhhh</h2>  
           <h2>hhhhh</h2>
+          <h2>hhhhh</h2>
+          <h2>hhhhh</h2> 
+          <h2>hhhhh</h2>
+          <h2>hhhhh</h2>
+          <h2>hhhhh</h2> 
+          <h2>hhhhh</h2>
+          <h2>hhhhh</h2>
+          <h2>hhhhh</h2> 
+          <h2>hhhhh</h2>
+          <h2>hhhhh</h2>
+          <h2>hhhhh</h2> 
+          <h2>hhhhh</h2>
+          <h2>hhhhh</h2>
+          <h2>hhhhh</h2> 
+          <h2>hhhhh</h2>
+          <h2>hhhhh</h2>
+          <h2>hhhhh</h2> 
         </div>
         <div className="main-container def-container">
             <Progress strokeWidth='7' sqSize='80' percentage={this.state.scrolled} styleType={accStyle}/>
