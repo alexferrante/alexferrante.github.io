@@ -1,0 +1,136 @@
+@import url('https://fonts.googleapis.com/css?family=Archivo:400,700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Source+Code+Pro&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Kanit:600&display=swap');
+
+$global-radius: 3px;
+$font-family: 'Archivo','Roboto Mono', Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+
+$color-white: #FFFFFF;
+$color-black: #000000;
+
+$color-gray-50: #FAFAFA;
+$color-gray-100: #F5F5F5;
+$color-gray-200: #EEEEEE;
+$color-gray-300: #E0E0E0;
+$color-gray-400: #BDBDBD;
+$color-gray-500: #9E9E9E;
+$color-gray-600: #757575;
+$color-gray-700: #616161;
+$color-gray-800: #424242;
+$color-gray-900: #212121;
+
+$color-blue-50: #E3F2FD;
+$color-blue-100: #BBDEFB;
+$color-blue-200: #90CAF9;
+$color-blue-300: #64B5F6;
+$color-blue-400: #42A5F5;
+$color-blue-500: #2196F3;
+$color-blue-600: #1E88E5;
+$color-blue-700: #1976D2;
+$color-blue-800: #1565C0;
+$color-blue-900: #0D47A1;
+
+@mixin center($width) {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: $width;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+  overflow: scroll;
+  -webkit-font-smoothing: antialiased;
+  -webkit-tap-highlight-color: transparent;
+}
+
+::-webkit-scrollbar { 
+  display: none; 
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  font-size: 1.6em;
+  line-height: 1.6;
+  color: $color-black;
+  font-family: $font-family;
+}
+
+.head-container {
+  position: fixed;
+  width: 100%;
+  height: 7%;
+  padding: 5px;
+}
+
+.title {
+  cursor: pointer;
+  font-size: 2.1em;
+  text-decoration: underline;
+  padding: 1px;
+}
+
+.link {
+  cursor: pointer;
+  font-weight: 700;
+  padding: 3px 1px;
+  transition: all .2s ease-out;
+}
+
+.active-link {
+  cursor: pointer;
+  padding: 3px 4px;
+  transition: all .2s ease-out;
+  color: red;
+}
+
+.main-container {
+  display: flex;
+  flex-direction: column;
+  width: 63%;
+  float: right;
+}
+
+.info-container {
+  width: 37%;
+  float: left;
+  position: fixed;
+}
+
+.def-container {
+  margin-top: 5%;
+  overflow: auto;
+}
+
+.default-section {
+  background-color: #fff;
+  width: 100%;
+  height: 100vh;
+}
+
+.progress-btn {
+  cursor: pointer;
+  position: fixed;
+  right: 3%;
+  bottom: 3%;
+}
+
+#Interests {
+  background-color: #000;
+}
+
+.progress-bg {
+  fill: none;
+  stroke: #ddd;
+}
+
+.progress-pg {
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
