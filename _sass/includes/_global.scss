@@ -1,0 +1,57 @@
+*::selection {
+    background: $pink;
+  }
+
+  html {
+    box-sizing: border-box;
+    height: 100%;
+  }
+  
+  *,
+  *:before,
+  *:after {
+    box-sizing: inherit;
+  }
+  
+  body {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    margin: 0;
+    background-color: $light-grey;
+  }
+  
+  .wrapper {
+    max-width: 100%;
+    height: 100%;
+  }
+
+  a, a:visited, a:hover, a:active {
+    color: inherit;
+  }
+  
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin: 0;
+  }
+  
+  p {
+    margin: 0;
+  }
+  
+  a {
+    text-decoration: none;
+  }
+  
+  img {
+    display: block;
+  }
+  
+  ul {
+    padding: 0;
+    list-style: none;
+  }

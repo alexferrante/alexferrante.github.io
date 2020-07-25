@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+  {% include head.html %}
+  <body>
+    {% include header.html %}
+    {% include side.html %}
+    <div>
+      <h2>{{ page.title }}</h2>
+      <h3 datetime="{{ post.date | date: '%F' }}">{{ page.date | date: "%b %-d, %Y" }}</h3>
+      <div>
+        {{ content }}
+      </div>
+    </div>
+  </body>
+</html>

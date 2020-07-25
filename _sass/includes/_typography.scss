@@ -1,0 +1,71 @@
+@font-face {
+    font-family: "IBM Plex Mono";
+    font-display: fallback;
+    font-style: normal;
+    src: local("IBM Plex Mono"), 
+      url("../fonts/IBMPlexMono-Regular.ttf") format("truetype"),
+  }
+  
+  @font-face {
+    font-family: "IBM Plex Mono";
+    font-display: fallback;
+    font-weight: bold;
+    src: local("IBM Plex Mono"), 
+      url("../fonts/IBMPlexMono-SemiBold.ttf") format("truetype"),
+  }
+  
+  @font-face {
+    font-family: "IBM Plex Sans";
+    font-display: fallback;
+    font-style: normal;
+    src: local("IBM Plex Sans"), 
+      url("../fonts/IBMPlexSans-Medium.ttf") format("truetype"),
+  }
+
+  @font-face {
+    font-family: "Inter-Regular";
+    font-display: fallback;
+    font-weight: normal;
+    src: local("Inter-Regular"), 
+      url("../fonts/Inter-Regular-sInt=0.ttf") format("truetype"),
+  }
+  
+  @font-face {
+    font-family: "Inter-Regular";
+    font-display: fallback;
+    font-style: bold;
+    src: local("IBM Plex Sans"), 
+      url("../fonts/Inter-Medium-sInt=0.ttf") format("truetype"),
+  }
+  
+  //! set font variables
+  $font-heading: 'IBM Plex Sans', sans-serif;
+  $font-body: 'IBM Plex Mono', monospace;
+  $font-title: 'Inter-Regular', sans-serif;
+  
+  html {
+    font-size: 62.5%; // 1rem = 10px, 3.5rem = 35px;
+  }
+  
+  body {
+    font-family: $font-body;
+    font-size: 1.6rem;
+    color: $black;
+  }
+  
+  h1 {
+    font-family: $font-heading, serif;
+    font-size: 4rem;
+    font-weight: 400;
+  }
+
+  h2 {
+    font-family: $font-title;
+    font-size: 4rem;
+  }
+
+  h3 {
+    font-family: $font-heading;
+    font-size: 1.4rem;
+  }
+

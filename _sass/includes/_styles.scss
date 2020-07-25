@@ -1,0 +1,59 @@
+header {
+  background: $royal-blue;
+  height: 7%;
+}
+
+.nav {
+  display: flex;
+  height: 100%;
+  align-items: center;
+  border-bottom: 1px solid $black-soft;
+  padding: 1%;
+}
+
+.side-piece {
+  width: 30%;
+  height: 100%;
+  padding: 1% 1%;
+  float: right;
+  p {
+    color: $royal-blue;
+    padding-bottom: 0.5em;
+    padding: 10px;
+  }
+  span {
+    font-weight: bolder;
+  }
+
+}
+
+.title {
+  margin-top: 5%;
+}
+
+.project-container {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  height: 31%;
+}
+
+$columns: 3;
+
+.card {
+  background-color: pink;
+  border: LavenderBlush 3px solid;
+  border-radius: 8px;
+  padding: 16px;
+}
+
+@for $width from 1 through $columns {
+  .card-#{$width} {
+    flex-basis: $width / $columns * 100%;
+  }  
+}
+
+.main-piece {
+  width: 70%;
+  height: 100%;
+}
