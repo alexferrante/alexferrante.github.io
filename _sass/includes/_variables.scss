@@ -1,17 +1,21 @@
+@function random_idx($elements) {
+    @return random(length($elements))
+}
 $white: #fff;
 
 $light-grey: #fafafa;
 $royal-blue: #1c60f2;
-
 $black-soft: #444;
 $black: #09090e;
 $pink: #fff0f5;
 $yellow: #fffacd;
 
+$possible-main-background-colors: ($light-grey, $black);
+$possible-primary-accent-colors: ($royal-blue, $light-grey);
+$possible-secondary-accent-colors: ($black-soft, $pink);
 
+$idx: random_idx($possible-main-background-colors);
 
-//? override for project clarity
-
-$color-primary: $royal-blue;
-$color-secondary: $pink;
-$color-tertiary: $yellow;
+$main-background: nth($possible-main-background-colors, $idx);
+$primary-accent: nth($possible-primary-accent-colors, $idx);
+$secondary-accent: nth($possible-secondary-accent-colors, $idx);

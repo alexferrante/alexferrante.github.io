@@ -1,5 +1,5 @@
 header {
-  background: $royal-blue;
+  background: $primary-accent;
   height: 7%;
 }
 
@@ -7,7 +7,7 @@ header {
   display: flex;
   height: 100%;
   align-items: center;
-  border-bottom: 1px solid $black-soft;
+  border-bottom: 1px solid $secondary-accent;
   padding: 1%;
 }
 
@@ -17,7 +17,7 @@ header {
   padding: 1% 1%;
   float: right;
   p {
-    color: $royal-blue;
+    color: $primary-accent;
     padding-bottom: 0.5em;
     padding: 10px;
   }
@@ -42,7 +42,7 @@ $columns: 3;
 
 .card {
   background-color: pink;
-  border: LavenderBlush 3px solid;
+  border: $main-background 3px solid;
   border-radius: 8px;
   padding: 16px;
 }
