@@ -9,6 +9,13 @@ header {
   align-items: center;
   border-bottom: 1px solid $secondary-accent;
   padding: 1%;
+  span {
+    padding-left: $header-alignment / 4;
+    width: 100%;
+    font-family: $primary-header;
+    font-size: 4rem;
+    white-space: nowrap;
+  }
 }
 
 .side-piece {
@@ -17,7 +24,7 @@ header {
   padding: 1% 1%;
   float: right;
   p {
-    color: $primary-accent;
+    color: $secondary-font-color;
     padding-bottom: 0.5em;
     padding: 10px;
   }
@@ -56,4 +63,24 @@ $columns: 3;
 .main-piece {
   width: 70%;
   height: 100%;
+}
+
+.post-container {
+  width: 100%;
+  margin-left: $header-alignment;
+  margin-top: $header-alignment / 4;
+  h3 {
+    font-size: 1.5em;
+    padding-top: $header-alignment / 4;
+  }
+  h2 {
+  }
+}
+
+.posts-container {
+  margin-left: $header-alignment;
+  li {
+    padding-bottom: 7%;
+  }
+
 }

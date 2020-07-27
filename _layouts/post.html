@@ -2,9 +2,14 @@
 <html lang="en">
   {% include head.html %}
   <body>
-    {% include header.html %}
-    {% include side.html %}
-    <div>
+    <header>
+      <div class="wrapper">
+        <div class="nav">
+          <span><a href="/posts"><<</a></span>
+        </div>
+      </div>
+  </header>
+    <div class="post-container">
       <h2>{{ page.title }}</h2>
       <h3 datetime="{{ post.date | date: '%F' }}">{{ page.date | date: "%b %-d, %Y" }}</h3>
       <div>
