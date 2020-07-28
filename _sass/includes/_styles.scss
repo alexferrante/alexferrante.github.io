@@ -7,12 +7,12 @@ header {
   display: flex;
   height: 100%;
   align-items: center;
-  border-bottom: 1px solid $secondary-accent;
+  border-bottom: 2px solid $secondary-accent;
   padding: 1%;
   span {
-    padding-left: $header-alignment / 4;
+    padding-left: 0.8em;
     width: 100%;
-    font-family: $primary-header;
+    font-family: $font-heading;
     font-size: 4rem;
     white-space: nowrap;
   }
@@ -43,15 +43,17 @@ header {
   flex-wrap: wrap;
   margin: 0 auto;
   height: 31%;
+  .card:last-child {
+    border-left: none;
+  }
 }
 
 $columns: 3;
 
 .card {
   background-color: pink;
-  border: $main-background 3px solid;
-  border-radius: 8px;
-  padding: 16px;
+  border: 2px solid $secondary-accent;
+  border-top: 0px;
 }
 
 @for $width from 1 through $columns {
@@ -73,12 +75,15 @@ $columns: 3;
     font-size: 1.5em;
     padding-top: $header-alignment / 4;
   }
-  h2 {
+  div {
+    margin: 7% 10% 10% 0;
   }
 }
 
 .posts-container {
+  margin: $header-alignment 0 $header-alignment 0;
   margin-left: $header-alignment;
+
   li {
     padding-bottom: 7%;
   }

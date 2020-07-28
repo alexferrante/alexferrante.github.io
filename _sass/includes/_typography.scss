@@ -96,7 +96,6 @@ h2 {
 
 h3 {
   font-family: "IBM Plex Mono";
-  font-style: italic;
   font-weight: normal;
   font-size: 3rem;
 }
@@ -104,6 +103,7 @@ h3 {
 h4 {
   font-family: $font-body;
   font-size: 1.5rem;
+  font-style: italic;
   font-weight: normal;
 }
 
