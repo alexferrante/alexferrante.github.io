@@ -11,15 +11,15 @@ $pink: #fff0f5;
 $yellow: #fffacd;
 
 $possible-main-background-colors: ($light-grey, $black);
-$possible-primary-accent-colors: ($royal-blue, $light-grey);
-$possible-secondary-font-colors: ($royal-blue, $black);
+$possible-primary-accent-colors: ($light-grey);
+$possible-secondary-font-colors: ($black);
 $possible-secondary-accent-colors: ($black-soft, $black-soft);
 
 $idx: random_idx($possible-main-background-colors);
 
 $main-background: nth($possible-main-background-colors, $idx);
-$primary-accent: nth($possible-primary-accent-colors, $idx);
+$primary-accent: $light-grey; // nth($possible-primary-accent-colors, $idx);
 $secondary-accent: nth($possible-secondary-accent-colors, $idx);
-$secondary-font-color: nth($possible-secondary-font-colors, $idx);
+$secondary-font-color: $black; // nth($possible-secondary-font-colors, $idx);
 
 $header-alignment: 2.8em;

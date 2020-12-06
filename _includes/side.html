@@ -1,16 +1,18 @@
 <div class="side-piece">
-    <p class="title">EDUCATION</p>
-    <p><span>2017-2021 </span>Computer Science, University of Rochester</p>
-    <p class="title">EXPERIENCE</p>
-    <p><span>June 2020-Jan 2021 </span>SDE Intern at Amazon</p>
-    <p><span>June 2019-Aug 2019 </span>SWE Intern at Northwestern Mutual</p>
-    <p class="title">INTERESTS & INVOLVEMENT</p>
-    <p><span>Rewriting the Code </span>Fellow</p>
-    <p><span>Recurse Center </span>(M1 '20) Alum</p>
-    <p><span>Out for Undergrad </span>(Tech '19) Alum</p>
-    <p class="title"><a href="/posts">POSTS</a></p>
+    <div>
+      <p class="title">EDUCATION</p>
+      <p><span>2017-2021 </span>Computer Science, University of Rochester</p>
+      <p class="title">EXPERIENCE</p>
+      <p><span>June 2020-Jan 2021 </span>SDE Intern at Amazon</p>
+      <p><span>June 2019-Aug 2019 </span>SWE Intern at Northwestern Mutual</p>
+      <p class="title">INTERESTS & INVOLVEMENT</p>
+      <p><span>Rewriting the Code </span>Fellow</p>
+      <p><span>Recurse Center </span>(M1 '20) Alum</p>
+      <p><span>Out for Undergrad </span>(Tech '19) Alum</p>
+    </div>
+    <p class="title"><a href="/posts">RECENT POSTS</a></p>
     <ul>
-      {% for post in site.categories.posts  limit:4 %}
+      {% for post in site.categories.posts  limit:3 %}
         <li>
           <p>
             <a href="{{ post.url }}"><span datetime="{{ post.date | date: '%F' }}">{{ post.date | date: "%m.%-d.%Y" }}</span> {{ post.title }}</a>

@@ -10,7 +10,6 @@ header {
   border-bottom: 2px solid $secondary-accent;
   padding: 1%;
   span {
-    padding-left: 0.8em;
     width: 100%;
     font-family: $font-heading;
     font-size: 4rem;
@@ -21,8 +20,8 @@ header {
 .side-piece {
   width: 30%;
   height: 100%;
-  padding: 1% 1%;
-  float: right;
+  float: left;
+  border-right: 2px solid $secondary-accent;
   p {
     color: $secondary-font-color;
     padding-bottom: 0.5em;
@@ -32,6 +31,27 @@ header {
     font-weight: bolder;
   }
 
+  div {
+    padding-bottom: 1em;
+    border-bottom: 2px solid $secondary-accent;
+  }
+}
+
+.nav-piece {
+  height: 100%;
+  float: right;
+  width: 15%;
+  border-left: 2px solid $secondary-accent;
+  p {
+    font-family: $font-body;
+    font-size: 1.5em;
+    color: $secondary-font-color;
+    padding: 10px;
+  }
+  a {
+    border-bottom: 2px solid $secondary-accent;
+    padding-bottom: 5%;
+  }
 }
 
 .title {
@@ -68,7 +88,8 @@ $columns: 3;
 }
 
 .main-piece {
-  width: 70%;
+  float: left;
+  width: 55%;
   height: 100%;
 }
 
