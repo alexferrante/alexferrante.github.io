@@ -31,9 +31,34 @@ header {
     font-weight: bolder;
   }
 
-  div {
-    padding-bottom: 1em;
-    border-bottom: 2px solid $secondary-accent;
+  padding-bottom: 1em;
+  border-bottom: 2px solid $secondary-accent;
+
+  img {
+    width: 7%;
+    padding-left: 10px;
+  }
+  
+}
+
+.icons {
+  max-width: 10% !important;
+  width: 10% !important;
+  min-width: 3em !important;
+}
+
+#social-container {
+
+  img {
+    padding-top: 2%;
+    display: inline-block;
+    max-width: 10%;
+    width: 10%;
+    min-width: 3em;
+  }
+
+  p {
+    font-size: .8em;
   }
 }
 
