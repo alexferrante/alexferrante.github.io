@@ -6,6 +6,6 @@ url: "alexferrante.github.io"
 github_username:  alexferrante
 
 plugins:
-  - jekyll-feed
+  - jekyll-last-modified-at
 
 permalink: /:title/
