@@ -3,7 +3,7 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches:
-      - main  # Adjust this if you use a different branch for development
+      - main
 
 jobs:
   deploy:
@@ -16,19 +16,21 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '18.x'  # Set Node.js version to 18 or higher
+          node-version: '18.x'
 
       - name: Install pnpm
-        run: npm install -g pnpm
+        run: npm install -g pnpm@7
 
       - name: Install dependencies
         run: pnpm install
 
       - name: Build project
-        run: pnpm run build
+        run: |
+          pnpm run build
+          pnpm run export  # Generate static files
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           deploy_key: ${{ secrets.DEPLOY_KEY }}
-          publish_dir: ./.next
+          publish_dir: ./out
