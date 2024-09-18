@@ -1,0 +1,1 @@
+self.__NEXT_FONT_MANIFEST='{"pages":{},"app":{"/home/runner/work/alexferrante.github.io/alexferrante.github.io/app/layout":["static/media/a9c5269db9db986d-s.p.woff2","static/media/a34f9d1faa5f3315-s.p.woff2","static/media/86fdec36ddd9097e-s.p.woff2"]},"appUsingSizeAdjust":true,"pagesUsingSizeAdjust":false}';
