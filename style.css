@@ -77,10 +77,12 @@ html, body {
   .link-bar a {
     color: #1a0dab;
     text-decoration: none;
+    opacity: 0.85;
   }
   
   .link-bar a:hover {
     text-decoration: underline;
+    opacity: 1;
   }
   
   .link-bar .divider {
@@ -105,6 +107,8 @@ html, body {
   h2 {
     font-size: 1.3rem;
     margin-top: 2rem;
+    margin-bottom: 0.6rem;
+    letter-spacing: 0.02em;
   }
   
   footer {
@@ -127,12 +131,12 @@ html, body {
   }
   
   .paper-entry {
-    margin-bottom: 0.6rem;
+    margin-bottom: 1.2rem;
   }
   
   .paper-title {
-    font-weight: bold;
-    margin-bottom: 0.1rem;
+    font-weight: 600;
+    margin-bottom: 0.2rem;
     font-size: 1rem;
     line-height: 1.3;
   }
@@ -159,3 +163,6 @@ html, body {
     text-decoration: underline;
   }
   
+  main.content section:first-of-type h2 {
+    margin-top: 1rem;
+  }
